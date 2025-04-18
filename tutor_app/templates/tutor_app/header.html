@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+</head>
+<body>
+    <div class="head-cont">
+        {% if user.is_authenticated %}
+            <span id="user-id" style="display: none;">{{ user.id }}</span>
+            <span id="user-role" style="display: none;">
+                {% if user.is_tutor %}tutor{% else %}student{% endif %}
+            </span>
+        {% endif %}
+        <header>
+            <div class="head-left">
+                <h3 class="head-left-logo">GUROO</h3>
+                <h4 class="head-left-text"><a href="{% url 'main_page' %}">Главная</a></h4>
+                <h4 class="head-left-text"><a href="{% url 'tutors' %}">Тьюторы</a></h4>
+                <h4 class="head-left-text"><a href="{% url 'about_page' %}">О нас</a></h4>
+            </div>
+            {% if user.is_authenticated %}
+                
+            <div class="profile">
+                <!-- Колокольчик для уведомлений -->
+                <div id="notification-bell" class="notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span id="notification-count" class="notification-count" style="display: none;">0</span> <!-- По умолчанию скрыт -->
+                </div>
+                
+                <div class="avatar" id="avatar">
+                    {% if user.profile_picture %}
+                        <img src="{{ user.profile_picture.url }}" alt="Avatar">
+                    {% else %}
+                        <span class="avatar-text">
+                            {{ user.first_name|default:"U"|first }}{{ user.last_name|default:"U"|first }}
+                        </span>
+                    {% endif %}
+                </div>
+                
+                <span id="user-name">{{ user.first_name }} {{ user.last_name }}</span>
+            </div>
+            
+            <!-- Список уведомлений -->
+            <div id="notification-popup" class="popup hidden">
+                <div class="popup-content">
+                    <h2>Уведомления</h2>
+                    <p id="no-notifications-msg" style="display: none;">Тут пока ничего нет..</p>
+                    <ul id="notifications-list"></ul>
+                    <button id="close-notifications">Закрыть</button>
+                </div>
+            </div>
+            
+                <!-- Попап окно "Ваши тьюторы" -->
+                <div id="profile-popup" class="popup">
+                    <div class="popup-content">
+                        <h2>Ваши тьюторы</h2>
+                        <p id="student-name"></p>
+                        <ul id="registered-tutors"></ul>
+                        <button id="close-popup">Закрыть</button>
+                    </div>
+                </div>
+                
+                <div id="tutor-schedule-popup" class="popup hidden">
+                    <div class="popup-content">
+                        <h2 id="tutor-name-title">Расписание</h2>
+                        <ul id="tutor-schedule-list"></ul>
+                    
+                        <div id="attendance-form" class="hidden" style="margin-top: 15px;">
+                        <input type="text" id="lesson-topic" placeholder="Тема урока" />
+                        <input type="text" id="lesson-location" placeholder="Место проведения" />
+                        <button id="submit-attendance">✅ Отметиться</button>
+                        </div>
+                    
+                        <button id="close-schedule-popup">Закрыть</button>
+                    </div>
+                </div>
+                  
+                
+
+            <!-- Мои уроки -->
+        <div id="lessons-popup" class="popup hidden">
+            <div class="popup-content">
+                <h2 id="lessons-title">Ваши тьюти:</h2>
+
+                <!-- Кнопка назад ⬅️ (только во втором экране) -->
+                <button id="back-to-tutors" class="hidden" onclick="goToTutorsScreen()">⬅️</button>
+
+                <!-- Поля ввода темы и места (только если сейчас пара) -->
+                <input type="text" id="lesson-topic" placeholder="Тема урока" class="hidden" />
+                <input type="text" id="lesson-location" placeholder="Место проведения" class="hidden" />
+
+                <!-- Блок расписания (всегда отображается во втором экране) -->
+                <div id="lesson-schedule" class="schedule-block"></div>
+
+                <!-- Список тьюти (только если сейчас идёт пара) -->
+                <ul id="my-lessons-list"></ul>
+                <p id="no-lessons-msg" style="display: none;">Тут пока никого нет!</p>
+
+                <!-- Кнопка перехода на экран урока -->
+                <button id="go-to-lesson" onclick="goToLessonScreen()">➡️</button>
+
+                <!-- Закрытие попапа -->
+                <button id="close-lessons">Закрыть</button>
+            </div>
+        </div>
+
+        <!-- Затемнение фона -->
+        <div id="lessons-overlay" class="popup-overlay hidden"></div>
+
+
+                <!-- Затемнение фона при открытии попапа -->
+            {% else %}
+                <a href="{% url 'sign_in' %}"><button class="head-right">Войти</button></a>
+            {% endif %}
+        </header>
+    </div>
+    <div id="popup-overlay" class="popup-overlay hidden"></div>
+
+    <script src="{% static 'header.js' %}"></script>
+</body>
+</html> 

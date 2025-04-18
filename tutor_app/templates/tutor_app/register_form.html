@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'register_form.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+</head>
+<body>
+  <div id="animation-container"></div> 
+  {% include 'tutor_app/header.html' %}
+  <div class="wrapper">
+
+    <div class="main1">
+      <div class="form-container">
+
+        
+
+        <form id="register-form">
+          {% csrf_token %}
+
+          <!-- Почта (скрытая, но передаётся в бекенд) -->
+          <input type="hidden" id="email" value="{{ email }}">
+
+          <!-- Имя -->
+          <div class="col-md-6">
+            <label for="first_name" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="first_name" required>
+          </div>
+
+          <!-- Фамилия -->
+          <div class="col-md-6">
+            <label for="last_name" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="last_name" required>
+          </div>
+
+          <!-- Курс -->
+          <div class="col-md-6">
+            <label for="course" class="form-label">Курс</label>
+            <select class="form-select" id="course" required>
+              <option selected disabled>Выберите курс...</option>
+              <option value="1">1 курс</option>
+              <option value="2">2 курс</option>
+              <option value="3">3 курс</option>
+            </select>
+          </div>
+
+          <!-- Группа -->
+          <div class="form-group group-wrapper">
+            <label for="group-search" class="form-label">Группа</label>
+            <input type="text" id="group-search" name="group" autocomplete="off" placeholder="Введите или выберите свою группу" required>
+            <div id="group-list"></div>
+          </div>
+        
+          <!-- Пароль -->
+          <div class="col-md-6">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password" required>
+          </div>
+
+          <!-- Повтор пароля -->
+          <div class="col-md-6">
+            <label for="confirm_password" class="form-label">Повторите пароль</label>
+            <input type="password" class="form-control" id="confirm_password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="login-btn">
+            <span class="btn-text">Завершить регистрацию</span>
+            <span class="loader" style="display: none;"></span>
+          </button>
+
+          <div class="sign-in">
+            <h1 class="sign-in-text">Есть аккаунт?</h1>
+            <a class="sign-in-in" href="{% url 'sign_in' %}">Войти</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'register_form.js' %}" defer></script>
+
+</body>
+</html>

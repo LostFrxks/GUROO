@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <title>Вход</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+</head>
+<body>
+    <div id="animation-container"></div>
+    {% include 'tutor_app/header.html' %}
+ 
+  <div class="wrapper">
+    <div class="main1">
+      <div class="form-container">
+        <form id="email-form" method="POST" action="{% url 'send_verification_code' %}">
+          {% csrf_token %}
+          
+          <!-- Блок вывода ошибки -->
+          {% if error %}
+            <p style="color: red; font-weight: bold; padding-bottom: 10px; font-size: 13px;">{{ error }}</p>
+          {% endif %}
+
+          <div class="col-md-6">
+            <label for="email" class="form-label">Почта</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary" id="get-code-btn">
+              <span class="btn-text">Получить код</span>
+              <span class="loader" style="display: none;"></span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Форма ввода кода, скрытая по умолчанию -->
+        <div id="verify-section" style="display: none;">
+          <form id="verify-form" method="POST" action="{% url 'verify_code' %}">
+            {% csrf_token %}
+            
+            <div class="col-md-6">
+              <label for="verification-code" class="form-label">Код подтверждения</label>
+              <input type="text" class="form-control" id="verification-code" name="verification-code" required>
+            </div>
+
+            <div class="col-12 mt-3">
+              <button type="submit" class="btn btn-primary">Подтвердить</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="sign-in">
+          <h1 class="sign-in-text">Уже есть аккаунт? </h1>
+          <a class="sign-in-in" href="{% url 'login' %}">Войти</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'register.js' %}" defer></script>
+</body>
+</html>

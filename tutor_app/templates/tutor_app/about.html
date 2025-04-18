@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'about-css.css' %}">
+
+</head>
+<body>
+
+    <!-- Intro-анимация -->
+    <div class="intro-screen">
+        <h1 class="intro-text">GFive Team</h1>
+    </div>
+    {% include 'tutor_app/header.html' %}
+
+    <div class="wrapper">   
+        <div class="main1-about">
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="{% static 'Photos/Emka1.jpg' %}" alt="Slide 2" class="cropped-image">
+                        <p class="text-slider">Мурынбаев Эмирлан</p>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'Photos/Nurs1.jpg' %}" alt="Slide 2" class="cropped-image">
+                        <p class="text-slider">Абдималиков Нурсултан</p>
+                    </div>
+                    <div class="slide">
+                        <!-- <img src="{% static 'Photos/Artur1.jpg' %}" alt="Slide 3" class="cropped-image"> -->
+                        <p class="text-slider">Усенов Артур</p>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'Photos/Emik1.jpg' %}" alt="Slide 4" class="cropped-image">
+                        <p class="text-slider">Тоголоков Эмирлан</p>
+                    </div>
+                    <div class="slide">
+                        <!-- <img src="{% static 'Photos/Arsen1.jpg' %}" alt="Slide 5" class="cropped-image"> -->
+                        <p class="text-slider">Курсаналиев Арсен</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main1-right-about">
+                <h5 class="main1-right-text1-about">О команде</h5>
+                <h2 class="main1-right-text2-about">GFive Team</h2>
+                <h4 class="main1-right-text3-about">GFive Team - это команда из 5 человек, состоящая из студентов направления SEST, колледжа TSI AUCA. В нашу команду входят такие ученики как: Тоголоков Эмирлан, Усенов Артур, Мурынбаев Эмирлан, Курсаналиев Арсен и Абдималиков Нурсултан. Нашей целью является создание надежного и интуитивно понятного решения, которое станет неотъемлемой частью учебного процесса в колледже TSI AUCA.</h4>
+            </div>
+        </div>
+
+        <div class="inserted-part">
+            <h1 class="inserted-part-text">Наши проекты</h1>
+        </div>
+
+        <div class="main2-about">
+            <div class="main2-left-about">
+                <h2 class="main2-left-text1-about">GUROO</h2>
+                <h4 class="main2-left-text2-about">Guroo — это веб-платформа, созданная для удобной записи студентов колледжа TSI AUCA к тьюторам. Данная система создана, которая упрощает процесс бронирования консультаций, автоматизирует учет встреч и делает взаимодействие между студентами и преподавателями более удобным и прозрачным.</h4>
+            </div>
+            <div class="main2-right-about"></div>
+        </div>
+
+        <div class="main3-about">
+            <div class="main3-left-about"></div>
+            <div class="main3-right-about">
+                <h2 class="main3-right-about-text1">MAKEATHON</h2>
+                <h4 class="main3-right-about-text2">Наша команда заняла первое место на Мейкатоне. Нашей индивидуальной разработкой была платформа-коляска для инвалидов, созданная на базе гироскутера с управлением через Arduino. Это устройство значительно улучшает мобильность людей с ограниченными возможностями, предоставляя им больше свободы передвижения. Мы гордимся тем, что смогли предложить реальное решение, которое сочетает инновационный подход и практическую ценность, и получили заслуженное признание на конкурсе.</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h1 class="footer-left-title">The Guroo Project</h1>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">О проекте</a>
+                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Тех. поддержка</a>
+                    <a href="#" class="footer-link">Условия использования</a>
+                    <a href="#" class="footer-link">Политика конфиденциальности </a>
+                    <a href="https://tsiauca.kg" class="footer-link">Официальный сайт TSI AUCA</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h1 class="footer-right-title">Соц. сети</h1>
+                <div class="social-icons">
+                    <div class="social-item">
+                        <div class="social-icons-img1"></div>
+                        <a href="#" class="social-icon">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icons-img2"></div>
+                        <a href="#" class="social-icon">Whatsapp</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icons-img3"></div>
+                        <a href="#" class="social-icon">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-animation"></div>
+    </footer>
+    
+    <script src="{% static 'about-js.js' %}"></script>
+</body>
+</html>

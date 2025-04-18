@@ -1,0 +1,422 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-left: 110px;  
+    padding-right: 110px;  
+    overflow: visible
+}
+@media (max-width: 1440px) {
+    .wrapper {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media( max-width:950px ){
+    .wrapper{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 930px) {
+    .wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media(max-width: 450px){
+    .wrapper{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media(max-width: 350px){
+    .wrapper{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+
+.main1{
+    width: 100%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-edit-container {
+    margin-top: 40px;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0.9;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+h2 {    
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.photo-preview{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-preview img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.photo-preview p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button {
+    background: linear-gradient(135deg, #ff7f27, #ff9900);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    width: 100%;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff9900, #ff7f27);
+}
+
+@media (max-width: 768px) {
+    .profile-edit-container {
+        width: 95%;
+    }
+}
+
+
+#days-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.day-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 15px;
+    width: 70%;
+    padding-bottom: 10px;
+}
+
+/* Стили для выпадающих списков */
+.day-entry select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 140px; /* Делаем фиксированную ширину */
+
+    -webkit-appearance: none;  /* Для Safari и Chrome */
+    -moz-appearance: none;     /* Для Firefox */
+    appearance: none;          /* Для остальных браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px; /* Чтобы текст не наползал на стрелку */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left;
+    
+}
+
+/* Время отображается в строку */
+.time-display {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    min-width: 120px; /* Фиксированный размер, чтобы не прыгало */
+    text-align: center;
+}
+
+/* Кнопка удаления */
+.delete-day {
+    background: #D32F2F; /* Красный фон */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.delete-day::before {
+    content: "🗑"; /* Unicode для мусорки */
+    font-size: 20px;
+}
+
+.delete-day:hover {
+    background: #B71C1C;
+}
+
+/* Кнопка добавления */
+#add-day-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+#add-day-btn:hover {
+    background: #0056b3;
+}
+
+/* =========================== */
+/* === АДАПТИВ === */
+/* =========================== */
+
+@media (max-width: 768px) {
+    .day-entry {
+        flex-wrap: wrap; /* Если экран маленький, переносит элементы */
+    }
+
+    .day-entry select {
+        width: 100%; /* Растягивает списки на мобильных */
+    }
+
+    .time-display {
+        min-width: auto;
+    }
+
+    .delete-day {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+.form-select {
+    -webkit-appearance: none;  /* Для Safari и Chrome */
+    -moz-appearance: none;     /* Для Firefox */
+    appearance: none;          /* Для остальных браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px; /* Чтобы текст не наползал на стрелку */
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left;
+    width: calc(100%);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-label{
+    display: flex;
+}
+
+
+
+.subject-container {
+    position: relative;
+    width: 100%;
+}
+
+.subject-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 10;
+    top: 100%;  
+}
+
+.subject-dropdown li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.subject-dropdown li:hover {
+    background: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.circle {
+    will-change: transform, opacity;
+}
+#animation-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1; /* Чтобы не перекрывали форму */
+    background: transparent;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.3); /* начальный цвет */
+    pointer-events: auto; /* нужно, чтобы circle реагировал на клики */
+    opacity: 0.7;
+    transition: background 0.4s ease; /* ⬅️ для плавной смены */
+}
+
+.circle.clicked {
+    background: rgba(0, 123, 255, 0.5); /* синий */
+}
+
+
+@keyframes moveCircle {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(var(--move-x), var(--move-y)) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(calc(var(--move-x) * 1.5), calc(var(--move-y) * 1.5)) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes moveBigCircle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(40vw, 40vh) scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(80vw, 80vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+@media(max-width: 700px){
+    .profile-edit-container h2{
+        font-size: 28px;
+        text-align: left;
+    }
+}
+
+@media(max-width: 475px){
+    .profile-edit-container h2{
+        font-size: 24px;
+    }
+}
+@media(max-width: 410px){
+    .profile-edit-container h2{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация тьютора</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'registration_tutors.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+</head>
+<body>
+  <div id="animation-container"></div> 
+  {% include 'tutor_app/header.html' %}
+
+  <div class="wrapper">
+    <div class="main1">
+      <div class="form-container">
+        <form id="register-tutor-form" method="POST" action="{% url 'complete_tutor_registration' %}">
+          {% csrf_token %}
+          <input type="hidden" name="telegram_id" value="{{ telegram_id }}">
+
+          <h1 class="main1-text">Регистрация тьютора</h1>
+          
+          <input type="hidden" name="token" value="{{ token }}">
+
+          <!-- Имя -->
+          <div class="col-md-6">
+            <label for="first_name" class="form-label">Имя</label>
+            <input type="text" class="form-control" name="first_name" required>
+          </div>
+
+          <!-- Фамилия -->
+          <div class="col-md-6">
+            <label for="last_name" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" name="last_name" required>
+          </div>
+
+          <!-- Курс -->
+          <div class="col-md-6">
+            <label for="course" class="form-label">Курс</label>
+            <select class="form-select" name="course" required>
+              <option selected disabled>Выберите курс...</option>
+              <option value="1">1 курс</option>
+              <option value="2">2 курс</option>
+              <option value="3">3 курс</option>
+            </select>
+          </div>
+          
+          <div class="form-group group-wrapper">
+            <label for="group-search" style="font-weight: bold;
+            display: block;
+            color: #333;">Группа</label>
+            <input type="text" id="group-search" name="group" autocomplete="off" placeholder="Введите или выберите свою группу" required>
+            <div id="group-list"></div>
+          </div>
+
+          <!-- Почта -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Почта</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+
+          <!-- Пароль -->
+          <div class="col-md-6">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+
+          <!-- Повтор пароля -->
+          <div class="col-md-6">
+            <label for="confirm_password" class="form-label">Повторите пароль</label>
+            <input type="password" class="form-control" name="confirm_password" required>
+          </div>
+
+          <!-- Кнопка регистрации -->
+          <button type="submit" class="btn btn-primary" id="login-btn">
+            <span class="btn-text">Зарегистрироваться</span>
+            <span class="loader" style="display: none;"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="token-error-overlay" class="popup-overlay" style="display: none;"></div>
+    <div id="token-error-popup" class="popup1" style="display: none;">
+      <h2 class="popup1-title">Ссылка недействительна</h2>
+      <p class="popup1-text">Кажется, эта ссылка уже использована или неверна.</p>
+      <button id="close-token-popup" class="btn btn-primary">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'registration_tutors.js' %}" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+    <title>Guroo</title>
+    <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'main-css.css' %}">
+
+
+</head>
+<body>
+    {% include 'tutor_app/header.html' %}
+
+    <div class="scroll-up-btn" id="scroll-up-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5v14m-7-7l7-7 7 7"/></svg>
+    </div>
+
+
+    <div class="wrapper">
+
+        <div class="main1">
+            <div class="main1-left">
+                <h1 class="main1-text-first">Tutors are always available</h1>
+                <h5 class="main1-text-second">Тьюторы помогают студентам осваивать сложные темы, предоставляя индивидуальную поддержку и готовы помочь изучить новую тему.</h5>
+
+                <div class="main1-count">
+                    <div class="main1-sectors">
+                        <h1 class="main1-secorts-digit">30+</h1>
+                        <h3 class="main1-secorts-text">Тьюторов</h3>
+                    </div>
+                    <div class="main1-sectors">
+                        <h1 class="main1-secorts-digit">1000+</h1>
+                        <h3 class="main1-secorts-text">Cтудентов доверяют нам</h3>
+                    </div>
+                    <div class="main1-sectors">
+                        <h1 class="main1-secorts-digit">100+</h1>
+                        <h3 class="main1-secorts-text">Успех студентов</h3>
+                    </div>
+                </div>
+
+                <div class="main1-search">
+                    <div class="main1-search-left">
+                        <div class="main1-search-img"></div>
+                        <input type="text" class="main1-search-input" placeholder="Найти тьютора">
+                    </div>
+                    <button class="main1-search-button">Поиск</button>
+                </div>
+            </div>
+
+            <div class="main1-right"></div>
+        </div>
+    
+        
+        <div class="main2">
+            <div class="main2-left-back"></div>
+            <div class="main2-left"></div>
+
+            <div class="main2-right">
+                <h5 class="main2-right-text1">О САЙТЕ</h5>
+                <h2 class="main2-right-text2">Простая и удобная запись к тьюторам</h5>
+                <h4 class="main2-right-text3">С Guroo студенты могут легко находить и бронировать консультации онлайн, а тьюторы — управлять расписанием и хранить отчеты в одном месте.</h4>
+                <button class="main2-right-button">Попробовать Guroo</button>
+            </div>
+        </div>
+
+
+        <div class="main3">
+            <div class="main3-left">
+                <h3 class="main3-left-text1">ТЬЮТОРЫ</h3>
+                <h3 class="main3-left-text2">Зачем нужно тьюторство?</h3>
+
+                <div class="main3-left-keys">
+                    <div class="main3-left-keys-keys1">
+                        <div class="main3-left-keys-keys1-img"></div>
+                        <h3 class="main3-left-keys-keys1-text">Гибкий график – тьюторы подстраиваются под твои возможности, помогая учиться в удобное время и темпе.</h3>
+                    </div>
+
+                    <div class="main3-left-keys-keys1">
+                        <div class="main3-left-keys-keys1-img"></div>
+                        <h3 class="main3-left-keys-keys1-text">Опыт старшекурсников – тьюторы уже прошли этот путь, знают тонкости предметов и делятся реальными знаниями.</h3>
+                    </div>
+
+                    <div class="main3-left-keys-keys1">
+                        <div class="main3-left-keys-keys1-img"></div>
+                        <h3 class="main3-left-keys-keys1-text">Поддержка и мотивация – тьюторы помогают преодолевать сложности и уверенно двигаться к успеху.</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main3-right-back"></div>
+            <div class="main3-right"></div>
+        </div>
+
+
+        <div class="main4">
+            <h1 class="main4-text1">ТЬЮТОРЫ</h1>
+            <h1 class="main4-text2">Лучшие тьюторы</h1>
+            <h1 class="main4-text3">Лучшие тьюторы по результатам рейтинга</h1>
+
+            <div class="main4-top3">
+                <div class="main4-top3-blocks">
+                    <div class="main4-top3-blocks-img1"></div>
+                    <div class="main4-top3-blocks-cont">
+                        <h1 class="main4-top3-blocks-text1">Эмирлан Тоголоков</h1>
+                        <h1 class="main4-top3-blocks-text2">Математика</h1>
+                        <div class="main4-top3-blocks-course">
+                            <div class="main4-top3-blocks-course-img"></div>
+                            <h1 class="main4-top3-blocks-course-courses">1 курс</h1>
+                        </div>
+
+                        <div class="main4-top3-blocks-stars" data-rating="4">
+                            <div class="main4-top3-blocks-star-1"></div>
+                            <div class="main4-top3-blocks-star-2"></div>
+                            <div class="main4-top3-blocks-star-3"></div>
+                            <div class="main4-top3-blocks-star-4"></div>
+                            <div class="main4-top3-blocks-star-5"></div>
+                            <h1 class="main4-top3-blocks-count">4.8 / 5.0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="main4-top3-blocks">
+                    <div class="main4-top3-blocks-img2"></div>
+                    <div class="main4-top3-blocks-cont">
+                        <h1 class="main4-top3-blocks-text1">Абдималиков Нурсултан</h1>
+                        <h1 class="main4-top3-blocks-text2">Информатика</h1>
+                        <div class="main4-top3-blocks-course">
+                            <div class="main4-top3-blocks-course-img"></div>
+                            <h1 class="main4-top3-blocks-course-courses">3 курс</h1>
+                        </div>
+
+                        <div class="main4-top3-blocks-stars" data-rating="5">
+                            <div class="main4-top3-blocks-star-1"></div>
+                            <div class="main4-top3-blocks-star-2"></div>
+                            <div class="main4-top3-blocks-star-3"></div>
+                            <div class="main4-top3-blocks-star-4"></div>
+                            <div class="main4-top3-blocks-star-5"></div>
+                            <h1 class="main4-top3-blocks-count">5.0 / 5.0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="main4-top3-blocks">
+                    <div class="main4-top3-blocks-img3"></div>
+                    <div class="main4-top3-blocks-cont">
+                        <h1 class="main4-top3-blocks-text1">Эмирлан Мурынбаев</h1>
+                        <h1 class="main4-top3-blocks-text2">Физика</h1>
+
+                        <div class="main4-top3-blocks-course">
+                            <div class="main4-top3-blocks-course-img"></div>
+                            <h1 class="main4-top3-blocks-course-courses">2 курс</h1>
+                        </div>
+                        
+                        <div class="main4-top3-blocks-stars" data-rating="4">
+                            <div class="main4-top3-blocks-star-1"></div>
+                            <div class="main4-top3-blocks-star-2"></div>
+                            <div class="main4-top3-blocks-star-3"></div>
+                            <div class="main4-top3-blocks-star-4"></div>
+                            <div class="main4-top3-blocks-star-5"></div>
+                            <h1 class="main4-top3-blocks-count">4.7 / 5.0</h1>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="main5">
+            <div class="main5-left">
+                <div class="main5-quote-wrapper">
+                    <h1 class="main5-left-quote">“Не нужно очаровываться, чтобы не разочаровываться!”</h1>
+                    <p class="quote-author">© Чынгыз Болотбекович</p>
+                </div>
+            </div>
+        
+            <div class="main5-right">
+                <div class="main5-right-img"></div>
+                <div class="main5-right-circle"></div> 
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h1 class="footer-left-title">The Guroo Project</h1>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">О проекте</a>
+                    <a href="#" class="footer-link">FAQ</a>
+                    <a href="#" class="footer-link">Тех. поддержка</a>
+                    <a href="#" class="footer-link">Условия использования</a>
+                    <a href="#" class="footer-link">Политика конфиденциальности </a>
+                    <a href="https://tsiauca.kg" class="footer-link">Официальный сайт TSI AUCA</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h1 class="footer-right-title">Соц. сети</h1>
+                <div class="social-icons">
+                    <div class="social-item">
+                        <div class="social-icons-img1"></div>
+                        <a href="#" class="social-icon">Telegram</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icons-img2"></div>
+                        <a href="#" class="social-icon">Whatsapp</a>
+                    </div>
+                    <div class="social-item">
+                        <div class="social-icons-img3"></div>
+                        <a href="#" class="social-icon">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-animation"></div>
+    </footer>
+
+<script src="{% static 'main-js.js' %}"></script>
+
+</body>
+</html>

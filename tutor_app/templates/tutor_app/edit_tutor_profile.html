@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'Photos/favicon.ico' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'edit_profile.css' %}">
+</head>
+<body>
+{% include 'tutor_app/header.html' %}
+<div id="animation-container"></div> 
+<div class="wrapper">
+    <div class="main1">
+        <div class="profile-edit-container">
+            <h2>Редактирование анкеты</h2>
+            <form method="POST" enctype="multipart/form-data" class="profile-form" id="tutor-form">
+                {% csrf_token %}
+                <input type="hidden" name="group" value="{{ form.group.value|default_if_none:'' }}">
+
+                <div class="form-group">
+                    <label for="telegram">Телеграмм группа:</label>
+                    <input type="text" name="telegram" id="telegram" placeholder="https://t.me/+123" value="{{ form.telegram.value }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона:</label>
+                    <input type="text" name="phone" id="phone" placeholder="0555 555 555" value="{{ form.phone.value }}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course" class="form-label">Курс:</label>
+                    <select name="course" id="course" class="form-select" required>
+                        <option selected disabled>Выберите курс...</option>
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3">3 курс</option>
+                    </select>
+                </div>
+                
+                
+                <div class="form-group" style="position: relative;">
+                    <label for="subject">Предмет:</label>
+                    <input type="text" name="subject" id="subject" value="{{ form.subject.value }}" required autocomplete="off">
+                    <ul id="subject-list" class="subject-dropdown"></ul>
+                </div>
+                
+            
+                <div class="form-group">
+                    <label>Выберите дни недели:</label>
+                    <div id="days-container"></div>
+                    <button type="button" id="add-day-btn">Добавить день</button>
+                </div>
+                <input type="hidden" name="schedule" id="schedule-input" value="{{ form.schedule.value|default:'{}' }}">
+            
+                <div class="form-group">
+                    <label for="bio">Биография:</label>
+                    <textarea name="bio" id="bio" placeholder="Напишите о себе"  required>{{ form.bio.value|default_if_none:"" }}</textarea>
+                </div>
+            
+                <div class="form-group photo-of-profile">
+                    <label for="photo">Фотография:</label>
+                    <input type="file" name="photo" id="photo">
+                    {% if form.photo.value %}
+                        <div class="photo-preview">
+                            <p>Текущая фотография:</p>
+                            <img src="{{ form.photo.value.url }}" alt="Фото тьютора">
+                        </div>
+                    {% endif %}
+                </div>
+            
+                <button type="submit" class="save-btn">Сохранить</button>
+            </form>        
+        </div>
+    </div>
+</div>
+<input type="text" id="schedule-checker" style="position: absolute; left: -9999px;" required>
+<script src="{% static 'edit_profile.js' %}"></script>
+</body>
+</html>
