@@ -1,0 +1,1 @@
+"""Guroo FastAPI application."""

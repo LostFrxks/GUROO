@@ -1,0 +1,365 @@
+.page-lessons {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.lessons-hero h1 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    color: #2f2f2f;
+}
+
+.lessons-hero p {
+    margin: 8px 0 0;
+    color: #5c5c5c;
+    font-family: 'Mulish', sans-serif;
+    max-width: 720px;
+}
+
+.lessons-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lessons-tabs button {
+    border: 1px solid rgba(242, 153, 74, 0.3);
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lessons-tabs button.active {
+    background: #F2994A;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(242, 153, 74, 0.35);
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.lessons-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 16px 18px;
+    border: 1px solid #eee3d6;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lessons-card-full {
+    grid-column: 1 / -1;
+}
+
+.lessons-card h2 {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #2f2f2f;
+}
+
+.lessons-muted {
+    color: #6b6b6b;
+    font-size: 13px;
+    font-family: 'Mulish', sans-serif;
+}
+
+.lessons-empty {
+    padding: 14px;
+    border-radius: 14px;
+    background: #fff6ed;
+    border: 1px dashed rgba(242, 153, 74, 0.4);
+    color: #7a5a2f;
+}
+
+.lessons-error {
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+.lessons-success {
+    color: #166534;
+    font-weight: 600;
+}
+
+.lesson-row {
+    border-radius: 14px;
+    border: 1px solid rgba(242, 153, 74, 0.12);
+    background: #fff8f1;
+    padding: 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lesson-row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.lesson-row-main strong {
+    color: #2f2f2f;
+}
+
+.lesson-row-main span {
+    font-size: 13px;
+    color: #5c5c5c;
+}
+
+.lesson-row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #444;
+}
+
+.lesson-row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.lesson-row-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    background: #F2994A;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(242, 153, 74, 0.35);
+}
+
+.lesson-row-actions button:nth-child(2) {
+    background: #ef4444;
+    box-shadow: 0 6px 14px rgba(239, 68, 68, 0.35);
+}
+
+.lesson-row-note {
+    font-size: 13px;
+    color: #4b4b4b;
+    line-height: 1.4;
+}
+
+.lesson-status {
+    font-weight: 700;
+    color: #7a5a2f;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(242, 153, 74, 0.18);
+}
+
+.lesson-inline {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+    border: 1px solid rgba(242, 153, 74, 0.18);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lesson-inline textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid rgba(242, 153, 74, 0.3);
+    padding: 8px 10px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 13px;
+    outline: none;
+}
+
+.lesson-inline-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.lesson-inline-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    background: #F2994A;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(242, 153, 74, 0.35);
+}
+
+.lesson-inline-actions button:last-child {
+    background: #6b7280;
+    box-shadow: 0 6px 14px rgba(107, 114, 128, 0.25);
+}
+
+.lesson-block {
+    border-radius: 18px;
+    border: 1px solid rgba(233, 225, 215, 0.9);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    background: #fff;
+}
+
+.lesson-block-header {
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgba(242, 153, 74, 0.18), rgba(255, 125, 160, 0.12));
+}
+
+.lesson-block-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.lesson-block-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    background: #F2994A;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(242, 153, 74, 0.35);
+}
+
+.lesson-block-body {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lesson-student-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.student-chip {
+    background: #fff8f1;
+    border: 1px solid rgba(242, 153, 74, 0.18);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+.student-chip-group {
+    color: #6b6b6b;
+    margin-left: 6px;
+}
+
+.lesson-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.55);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.lesson-modal {
+    width: min(520px, 94vw);
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid rgba(233, 225, 215, 0.9);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lesson-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.lesson-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.lesson-modal-header button {
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.lesson-modal label {
+    display: grid;
+    gap: 6px;
+    font-size: 13px;
+    color: #444;
+}
+
+.lesson-modal input,
+.lesson-modal select {
+    border-radius: 12px;
+    padding: 10px 12px;
+    border: 1px solid #e5e5e5;
+}
+
+.lesson-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lesson-modal-actions button {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    background: #F2994A;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(242, 153, 74, 0.35);
+}
+
+.lesson-modal-actions button.secondary {
+    background: #6b7280;
+    box-shadow: 0 6px 14px rgba(107, 114, 128, 0.25);
+}
+
+.lesson-attendance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lesson-attendance-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}

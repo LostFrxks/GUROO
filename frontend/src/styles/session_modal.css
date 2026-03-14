@@ -1,0 +1,65 @@
+.session-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 18px;
+}
+
+.session-modal {
+  width: min(520px, 100%);
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  padding: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.session-modal-title {
+  margin: 0;
+  font-size: 20px;
+  color: #141414;
+}
+
+.session-modal-text {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.68);
+  line-height: 1.35;
+}
+
+.session-modal-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.session-modal-btn {
+  width: 100%;
+}
+
+.session-modal-link {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.78);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.session-modal-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.session-modal-link:active {
+  transform: scale(0.98);
+}
+
